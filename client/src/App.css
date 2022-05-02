@@ -159,7 +159,8 @@ img {
 .btn-primary,
 .bg-primary,
 .badge-primary,
-.alert-primary {
+.alert-primary,
+input[type='file'] {
     background: var(--primary-color);
     color: #fff;
 }

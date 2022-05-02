@@ -8,7 +8,7 @@ connectDB();
 
 // Initialize middleware for response body parser
 // allows us send data in request.body
-app.use(express.json({ extended: false }));
+app.use(express.json({ extended: false, limit: '60mb' }));
 
 app.get('/', (req, res) => res.send('API Running'));
 
@@ -18,6 +18,6 @@ app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/profile', require('./routes/api/profile'));
 app.use('/api/posts', require('./routes/api/posts'));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => console.log(`Server started on ${PORT}`));

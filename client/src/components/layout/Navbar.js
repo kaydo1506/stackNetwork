@@ -14,6 +14,9 @@ const Navbar = () => {
                 <Link to='/profiles'>Developers</Link>
             </li>
             <li>
+                <Link to='/posts'>Posts</Link>
+            </li>
+            <li>
                 <Link to='/dashboard'>
                     <i className='fas fa-user' />
                     <span className='hide-sm'>Dashboard</span>
@@ -51,7 +54,7 @@ const Navbar = () => {
         <nav className='navbar bg-dark'>
             <h1>
                 <Link to='/'>
-                    <i className='fa-solid fa-code'></i> DevConnector
+                    <i className='fa-solid fa-code'></i> StackNetwork
                 </Link>
             </h1>
             {!loading && (

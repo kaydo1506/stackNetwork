@@ -10,6 +10,9 @@ import EditProfile from './components/profile-forms/EditProfile';
 import AddExperience from './components/profile-forms/AddExperience';
 import AddEducation from './components/profile-forms/AddEducation';
 import Profiles from './components/profiles/Profiles';
+import Profile from './components/profile/Profile';
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 import setAuthToken from './utils/setAuthToken';
 import { loadUser } from './actions/auth';
 import { Provider } from 'react-redux';
@@ -20,6 +23,7 @@ import store from './store';
 if (localStorage.token) {
     setAuthToken(localStorage.token);
 }
+
 const App = () => {
     useEffect(() => {
         store.dispatch(loadUser());
@@ -30,13 +34,17 @@ const App = () => {
             <Router>
                 <Fragment>
                     <Navbar />
-
                     <Routes>
                         <Route exact path='/' element={<Landing />} />
                         <Route exact path='/register' element={<Register />} />
                         <Route exact path='/login' element={<Login />} />
 
                         <Route exact path='/profiles' element={<Profiles />} />
+                        <Route
+                            exact
+                            path='/profile/:id'
+                            element={<Profile />}
+                        />
 
                         <Route element={<PrivateRoute />}>
                             <Route path='/dashboard' element={<Dashboard />} />
@@ -57,6 +65,8 @@ const App = () => {
                                 path='/add-education'
                                 element={<AddEducation />}
                             />
+                            <Route path='/posts' element={<Posts />} />
+                            <Route path='/posts/:id' element={<Post />} />
                         </Route>
 
                         <Route

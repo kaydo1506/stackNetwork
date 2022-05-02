@@ -22,6 +22,7 @@ export const getCurrentProfile = () => {
                 payload: res.data,
             });
         } catch (err) {
+            dispatch({ type: CLEAR_PROFILE });
             dispatch({
                 type: PROFILE_ERROR,
                 payload: {
@@ -36,14 +37,15 @@ export const getCurrentProfile = () => {
 // Get all profiles
 export const getProfiles = () => {
     return async (dispatch) => {
-        // dispatch({ type: CLEAR_PROFILE });
+
         try {
             const res = await axios.get('/api/profile');
-
+            // console.log(res.data);
             dispatch({
                 type: GET_PROFILES,
                 payload: res.data,
             });
+            dispatch({ type: CLEAR_PROFILE });
         } catch (err) {
             dispatch({
                 type: PROFILE_ERROR,
@@ -55,6 +57,7 @@ export const getProfiles = () => {
         }
     };
 };
+
 // Get all profile by id
 export const getProfileById = (userId) => {
     return async (dispatch) => {
@@ -62,7 +65,7 @@ export const getProfileById = (userId) => {
             const res = await axios.get(`/api/profile/user/${userId}`);
 
             dispatch({
-                type: GET_PROFILES,
+                type: GET_PROFILE,
                 payload: res.data,
             });
         } catch (err) {
@@ -113,6 +116,7 @@ export const createProfile = (formData, navigate, edit = false) => {
                 type: GET_PROFILE,
                 payload: res.data,
             });
+
             dispatch(
                 setAlert(
                     edit ? 'Profile Updated' : 'profile Created',

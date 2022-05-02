@@ -48,6 +48,7 @@ router.post(
             return res.status(400).json({ errors: errors.array() });
         }
         const {
+            dp,
             company,
             website,
             location,
@@ -65,6 +66,7 @@ router.post(
         // Build profile object
         const profileFields = {};
         profileFields.user = req.user.id;
+        if (dp) profileFields.dp = dp;
         if (company) profileFields.company = company;
         if (website) profileFields.website = website;
         if (location) profileFields.location = location;
@@ -76,7 +78,6 @@ router.post(
                 .split(',')
                 .map((skill) => skill.trim());
         }
-        console.log(profileFields.skills);
 
         // Social
         profileFields.social = {};
@@ -315,7 +316,7 @@ router.get('/github/:username', (req, res) => {
         const options = {
             uri: `https://api.github.com/users/${
                 req.params.username
-            }/repos?per_page=5&sort=created:asc&client_id=${config.get(
+            }/repos?per_page=4&sort=created:asc&client_id=${config.get(
                 'githubClientId'
             )}&client_secret=${config.get('githubSecret')}`,
             method: 'GET',

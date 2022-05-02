@@ -2,6 +2,7 @@ import React, { useState, Fragment } from 'react';
 import { useDispatch } from 'react-redux';
 import { createProfile } from '../../actions/profile';
 import { Link, useNavigate } from 'react-router-dom';
+// import FileBase64 from 'react-file-base64';
 
 const CreateProfile = () => {
     const dispatch = useDispatch();
@@ -38,13 +39,20 @@ const CreateProfile = () => {
     } = formData;
 
     const onChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+            // dp: item.image,
+        });
     };
     const onSubmit = (e) => {
         e.preventDefault();
         dispatch(createProfile(formData, navigate));
+
+        console.log(formData);
     };
 
+    // console.log(item);
     return (
         <div className='container'>
             {' '}
@@ -53,7 +61,6 @@ const CreateProfile = () => {
                 <i className='fas fa-user'></i> Let's get some information to
                 make your profile stand out
             </p>
-            <small>* = required field</small>
             <form className='form' onSubmit={onSubmit}>
                 <div className='form-group'>
                     <select name='status' value={status} onChange={onChange}>
@@ -72,9 +79,11 @@ const CreateProfile = () => {
                         <option value='Instructor'>
                             Instructor or Teacher
                         </option>
+
                         <option value='Intern'>Intern</option>
                         <option value='Other'>Other</option>
                     </select>
+
                     <small className='form-text'>
                         Give us an idea of where you are at in your career
                     </small>
@@ -232,3 +241,22 @@ const CreateProfile = () => {
 };
 
 export default CreateProfile;
+
+// const [item, setItem] = useState({ image: '' });
+//
+
+//   {
+//       item.image && (
+//           <img
+//               className='round-img my-1'
+//               style={{ width: '200px', height: '200px' }}
+//               src={item.image}
+//               alt='avatar'
+//           />
+//       );
+//   }
+//   <FileBase64
+//       type='file'
+//       multiple={false}
+//       onDone={({ base64 }) => setItem({ image: base64 })}
+//   />;
