@@ -14,7 +14,7 @@ const Profiles = () => {
     useEffect(() => {
         dispatch(getProfiles());
     }, [getProfiles]);
-    console.log(profiles);
+
     return (
         <div className='container'>
             {loading ? (
