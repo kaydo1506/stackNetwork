@@ -1,6 +1,5 @@
 import React from 'react';
-import Moment from 'react-moment';
-import moment from 'moment';
+import formatDate from '../../utils/formatDate';
 
 const ProfileEducation = ({
     education: { school, degree, fieldofstudy, current, to, from, description },
@@ -8,12 +7,7 @@ const ProfileEducation = ({
     <div>
         <h3 className='text-dark'>{school}</h3>
         <p>
-            <Moment format='YYYY/MM/DD'>{moment.utc(from)}</Moment> -{' '}
-            {!to ? (
-                ' Now'
-            ) : (
-                <Moment format='YYYY/MM/DD'>{moment.utc(to)}</Moment>
-            )}
+            {formatDate(from)} - {to ? formatDate(to) : 'Now'}
         </p>
         <p>
             <strong>Degree: </strong> {degree}
@@ -26,7 +20,5 @@ const ProfileEducation = ({
         </p>
     </div>
 );
-
-
 
 export default ProfileEducation;

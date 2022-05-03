@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import Moment from 'react-moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { addLike, removeLike, deletePost } from '../../actions/post';
+import formatDate from '../../utils/formatDate';
 
 const PostItem = ({
     post: { _id, text, name, avatar, user, likes, comments, date },
@@ -20,9 +20,7 @@ const PostItem = ({
             </div>
             <div>
                 <p className='my-1'>{text}</p>
-                <p className='post-date'>
-                    Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
-                </p>
+                <p className='post-date'>Posted on {formatDate(date)}</p>
 
                 {showActions && (
                     <Fragment>

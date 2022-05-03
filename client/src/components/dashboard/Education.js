@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { useDispatch } from 'react-redux';
-import Moment from 'react-moment';
+import formatDate from '../../utils/formatDate';
 
 import { deleteEducation } from '../../actions/profile';
 
@@ -13,12 +13,8 @@ const Education = ({ education }) => {
                 <td>{edu.school}</td>
                 <td className='hide-sm'>{edu.degree}</td>
                 <td>
-                    <Moment format='YYYY/MM/DD'>{edu.from}</Moment> -{' '}
-                    {edu.to === null ? (
-                        ' Now'
-                    ) : (
-                        <Moment format='YYYY/MM/DD'>{edu.from}</Moment>
-                    )}
+                    {formatDate(edu.from)} -{' '}
+                    {edu.to ? formatDate(edu.to) : 'Now'}
                 </td>
                 <td>
                     <button
