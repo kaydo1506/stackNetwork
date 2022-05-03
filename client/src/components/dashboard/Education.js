@@ -18,12 +18,12 @@ const Education = ({ education }) => {
                 </td>
                 <td>
                     <button
-                        className='btn btn-danger'
+                        className='btn btn-light'
                         onClick={() => {
                             dispatch(deleteEducation(edu._id));
                         }}
                     >
-                        Delete
+                        <i className='fa-solid fa-trash-can'></i>
                     </button>
                 </td>
             </tr>

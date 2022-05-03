@@ -6,7 +6,7 @@ const CommentForm = ({ postId }) => {
     const dispatch = useDispatch();
     const [text, setText] = useState('');
     return (
-        <div className='post-form '>
+        <div className='post-form' style={{ marginTop: '100px' }}>
             <div className='bg-primary p'>
                 <h3>Leave a comment</h3>
             </div>
