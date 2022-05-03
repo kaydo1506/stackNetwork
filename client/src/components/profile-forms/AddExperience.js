@@ -37,14 +37,14 @@ const AddExperience = () => {
     return (
         <div className='container'>
             {' '}
-            <h1 class='large text-primary'>Add An Experience</h1>
-            <p class='lead'>
-                <i class='fas fa-code-branch'></i> Add any developer/programming
-                positions that you have had in the past
+            <h1 className='large text-primary'>Add An Experience</h1>
+            <p className='lead'>
+                <i className='fas fa-code-branch'></i> Add any
+                developer/programming positions that you have had in the past
             </p>
             <small>* = required field</small>
-            <form class='form' onSubmit={onSubmit}>
-                <div class='form-group'>
+            <form className='form' onSubmit={onSubmit}>
+                <div className='form-group'>
                     <input
                         type='text'
                         placeholder='* Job Title'
@@ -54,7 +54,7 @@ const AddExperience = () => {
                         value={title}
                     />
                 </div>
-                <div class='form-group'>
+                <div className='form-group'>
                     <input
                         type='text'
                         placeholder='* Company'
@@ -64,7 +64,7 @@ const AddExperience = () => {
                         value={company}
                     />
                 </div>
-                <div class='form-group'>
+                <div className='form-group'>
                     <input
                         type='text'
                         placeholder='Location'
@@ -73,7 +73,7 @@ const AddExperience = () => {
                         value={location}
                     />
                 </div>
-                <div class='form-group'>
+                <div className='form-group'>
                     <h4>From Date</h4>
                     <input
                         type='date'
@@ -82,7 +82,7 @@ const AddExperience = () => {
                         value={from}
                     />
                 </div>
-                <div class='form-group'>
+                <div className='form-group'>
                     <p>
                         <input
                             type='checkbox'
@@ -97,7 +97,7 @@ const AddExperience = () => {
                         Current Job
                     </p>
                 </div>
-                <div class='form-group'>
+                <div className='form-group'>
                     <h4>To Date</h4>
                     <input
                         type='date'
@@ -107,7 +107,7 @@ const AddExperience = () => {
                         disabled={toDateDisabled ? 'disabled' : ''}
                     />
                 </div>
-                <div class='form-group'>
+                <div className='form-group'>
                     <textarea
                         name='description'
                         cols='30'
@@ -117,8 +117,8 @@ const AddExperience = () => {
                         value={description}
                     ></textarea>
                 </div>
-                <input type='submit' class='btn btn-primary my-1' />
-                <Link class='btn btn-light my-1' to='/dashboard'>
+                <input type='submit' className='btn btn-primary my-1' />
+                <Link className='btn btn-light my-1' to='/dashboard'>
                     Go Back
                 </Link>
             </form>
