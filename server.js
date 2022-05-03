@@ -9,7 +9,7 @@ connectDB();
 
 // Initialize middleware for response body parser
 // allows us send data in request.body
-app.use(express.json({ extended: false }));
+app.use(express.json());
 
 // define routes
 app.use('/api/users', require('./routes/api/users'));
