@@ -4,7 +4,6 @@ import Spinner from '../layout/Spinner';
 import { getProfiles } from '../../actions/profile';
 import ProfileItem from './ProfileItem';
 
-
 const Profiles = () => {
     const setProfile = useSelector((state) => state.profile);
 
@@ -15,7 +14,7 @@ const Profiles = () => {
     useEffect(() => {
         dispatch(getProfiles());
     }, [getProfiles]);
-
+    console.log(profiles);
     return (
         <div className='container'>
             {loading ? (
@@ -39,7 +38,6 @@ const Profiles = () => {
                             <h4>No profiles found...</h4>
                         )}
                     </div>
-                   
                 </Fragment>
             )}
         </div>

@@ -48,7 +48,7 @@ router.post(
             return res.status(400).json({ errors: errors.array() });
         }
         const {
-            dp,
+
             company,
             website,
             location,
@@ -66,7 +66,7 @@ router.post(
         // Build profile object
         const profileFields = {};
         profileFields.user = req.user.id;
-        if (dp) profileFields.dp = dp;
+
         if (company) profileFields.company = company;
         if (website) profileFields.website = website;
         if (location) profileFields.location = location;
