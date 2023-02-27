@@ -1,5 +1,5 @@
 {
-    "mongoURI": "mongodb+srv://Ify_x:Smartestify1@devsconnect.4ahwl.mongodb.net/devsConnect?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://Ify_x:Smartestify1@devsconnect.4ahwl.mongodb.net/?retryWrites=true&w=majority",
     "jwtSecret": "secrettoken",
     "githubClientId": "aa8f13c064ea7d053eb9",
     "githubSecret": "7fdfbb2b5c688e74232ac0f20aaf04ee8db92cb1"
