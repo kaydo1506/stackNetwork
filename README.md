@@ -6,7 +6,7 @@ Connect and share ideas with this web app :)
 - **Build your profile**
 - **Join the community**
 - **Post and comment on posts**
--**Like comments**
+- **Like comments**
 
 ## Built With
 
