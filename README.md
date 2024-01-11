@@ -1,6 +1,6 @@
 # stackNetwork
 
-Connect and share ideas with this web app :)
+Connect and share ideas with other Engineers :)
 ## Features
 
 - **Build your profile**
