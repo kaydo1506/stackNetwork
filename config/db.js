@@ -5,7 +5,6 @@ require('dotenv').config();
 const config = require('config');
 
 // get method from config module will let us get any string from the default.json file
-// const db = config.get('mongoURI');
 const db = process.env.MONGO_URI || config.get('mongoURI');
 
 const connectDB = async () => {
