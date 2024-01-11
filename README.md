@@ -26,7 +26,7 @@ Before running the project, ensure you have the following installed:
   npm install npm@latest -g
 
 ## Installation
-**git clone https://github.com/your_username/stackNetwork.git**
+**git clone**
 **cd stackNetwork**
 **npm install**
 **cd client && npm install**
